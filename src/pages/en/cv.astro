@@ -1,0 +1,152 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import TimeLineElement from "@/components/cv/TimeLine.astro";
+
+const startDate = new Date("2021-07-01");
+const today = new Date();
+const monthsDifference =
+  (today.getFullYear() - startDate.getFullYear()) * 12 +
+  (today.getMonth() - startDate.getMonth());
+
+const experienceYear = Math.floor(monthsDifference / 12);
+
+const experienceMonth = Math.floor(monthsDifference % 12);
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+  <div class="mb-10 text-justify">
+    <i>Hello there❓</i>, I’m Honggwan Jeong, a frontend developer
+    with a passion for creating functional websites that provide a
+    seamless user experience with maintainable code.
+    <br />I believe that good developer experience (DX) leads to good
+    user experience (UX), and I’m always looking for ways to improve
+    both. <br />
+    I have {experienceYear} years {
+      experienceMonth ? `and ${experienceMonth} months` : ""
+    } of experience in front-end development, Mainly concentrated on React,
+    NextJS.<br />
+    I’m excited to work with people who share my passion for delivering
+    better UX and creating innovative web experiences.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Korea IT Occupational Training College (Bachelor's degree)"
+      subtitle="2017 to 2020, Seoul, Korea - Department of Computer and Information Security"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Rapid Global - Frontend Engineer(Lead)"
+      subtitle="From Apr 2022 to Apr 2023, Seoul, Korea"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+      in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+      nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+    </TimeLineElement>
+    <TimeLineElement
+      title="DeepleHR - Frontend Engineer"
+      subtitle="From Apr 2022 to Apr 2023, Seoul, Korea"
+    >
+      <ul class="list-disc ml-4">
+        <li>
+          Migrated existing products implemented in EJS to React,
+          NextJS, and TypeScript
+        </li>
+        <li>
+          Implemented ISR to minimize backend requests to server and
+          improve TTV, LCP
+        </li>
+        <li>
+          Improved DX(Developer Experience) by implementing a
+          monolithic architecture to efficiently manage the code base
+          and using remote caching to minimize time spent on builds,
+          tests, and linting
+        </li>
+        <li>
+          Developed and documentized common components using storybook
+          to maximize component maintainability and collaboration with
+          designers.
+        </li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Cyberone - Penetration Tester and Frontend Engineer"
+      subtitle="From 2020 to 2022, Seoul, Korea"
+    >
+      <ul class="list-disc ml-4">
+        <li>
+          Reverse engineering analysis of mobile, desktop, and web
+          applications to understand how applications work, and use
+          programming knowledge to identify security vulnerabilities
+          and propose countermeasures.
+        </li>
+        <li>
+          Web and Mobile hacking - Find vunlerabilities and propose
+          countermeasures for SQL Injection, XSS,
+          authorization-related vulnerabilities, file download/upload
+          vulnerabilities, bypass rooting detection logic using
+          reverse engineering analysis, analyze obfuscated
+          applications, and modify security logic.
+        </li>
+        <li>
+          Black box penetration test - Black box-based penetration of
+          national infrastructure and financial institutions.
+        </li>
+      </ul>
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Certifications</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a
+        href="https://courses.edx.org/certificates/e2817567681c40538c42e8d45e6ada0f"
+        target="_blank"
+        class="underline"
+      >
+        WAI0.1x: Introduction to Web Accessibility
+      </a>
+    </li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6">
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+  </ul>
+</BaseLayout>

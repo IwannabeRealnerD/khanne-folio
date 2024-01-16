@@ -1,5 +1,5 @@
 ---
-import { defaultLang, useMenuTranslator } from "@/lib/sideMenuStr";
+import { useMenuTranslator } from "@/lib/sideMenuStr";
 const { sideBarActiveItemID } = Astro.props;
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
 
@@ -10,7 +10,15 @@ const useTranslator = useMenuTranslator(
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-  <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
+  <li>
+    <a
+      class="py-3 text-base"
+      id="home"
+      href=`/${Astro.currentLocale}`
+    >
+      {useTranslator("home")}
+    </a>
+  </li>
   <li>
     <a
       class="py-3 text-base"
@@ -23,14 +31,32 @@ const useTranslator = useMenuTranslator(
   <!-- Deleted because I don't have services and stores -->
   <!-- <li><a class="py-3 text-base" id="services" href="/services">Services</a></li>
     <li><a class="py-3 text-base" id="store" href="/store">Store</a></li> -->
-  <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li>
-  <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li>
+  <li>
+    <a
+      class="py-3 text-base"
+      id="blog"
+      href=`/${Astro.currentLocale}/blog/`
+    >
+      {useTranslator("blog")}
+    </a>
+  </li>
+  <li>
+    <a
+      class="py-3 text-base"
+      id="cv"
+      href=`/${Astro.currentLocale}/cv`
+    >
+      {useTranslator("cv")}
+    </a>
+  </li>
   <li>
     <a
       class="py-3 text-base"
       href="mailto:iwannaberealnerd@gmail.com"
       target="_blank"
-      referrerpolicy="no-referrer-when-downgrade">Contact</a
+      referrerpolicy="no-referrer-when-downgrade"
+    >
+      {useTranslator("contact")}</a
     >
   </li>
 
