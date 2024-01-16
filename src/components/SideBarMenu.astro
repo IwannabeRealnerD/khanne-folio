@@ -1,14 +1,24 @@
 ---
+import { defaultLang, useMenuTranslator } from "@/lib/sideMenuStr";
 const { sideBarActiveItemID } = Astro.props;
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
+
+const isKr = Astro.currentLocale === "kr";
+const useTranslator = useMenuTranslator(
+  Astro.currentLocale as "kr" | "en"
+);
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
   <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
   <li>
-    <a class="py-3 text-base" id="projects" href="/projects"
-      >Projects</a
+    <a
+      class="py-3 text-base"
+      id="projects"
+      href=`/${Astro.currentLocale}/projects`
     >
+      {useTranslator("project")}
+    </a>
   </li>
   <!-- Deleted because I don't have services and stores -->
   <!-- <li><a class="py-3 text-base" id="services" href="/services">Services</a></li>
@@ -23,14 +33,16 @@ const activeClass = "bg-base-300"; // For primary color replace with `active` cl
       referrerpolicy="no-referrer-when-downgrade">Contact</a
     >
   </li>
-</ul>
 
-<script
-  define:vars={{
-    sideBarActiveItemID: sideBarActiveItemID,
-    activeClass: activeClass,
-  }}
->
-  const activeItemElem = document.getElementById(sideBarActiveItemID);
-  activeItemElem && activeItemElem.classList.add(activeClass);
-</script>
+  <script
+    define:vars={{
+      sideBarActiveItemID: sideBarActiveItemID,
+      activeClass: activeClass,
+    }}
+  >
+    const activeItemElem = document.getElementById(
+      sideBarActiveItemID
+    );
+    activeItemElem && activeItemElem.classList.add(activeClass);
+  </script>
+</ul>
