@@ -1,0 +1,29 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const isKr = Astro.currentLocale === "kr";
+
+const currentCleanLocation = Astro.url.pathname.slice(3);
+const targetLocale = Astro.currentLocale === "kr" ? "en" : "kr";
+const languageUrlChange = getRelativeLocaleUrl(
+  targetLocale,
+  currentCleanLocation
+);
+---
+
+<a
+  href={languageUrlChange}
+  id="changeLanguageLink"
+  class="hover:underline text-gray-500 max-w-fit"
+  >{isKr ? "Change to English" : "한글로 바꾸기"}</a
+>
+
+<script>
+  const changeLanguageLink = document.getElementById(
+    "changeLanguageLink"
+  );
+  changeLanguageLink?.addEventListener("click", () => {
+    console.log("It's changed to");
+    alert("hi");
+  });
+</script>

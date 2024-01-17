@@ -9,7 +9,7 @@ const sideMenuObj = {
   en: {
     home: "Home",
     project: "Project",
-    blog: "blog",
+    blog: "Blog",
     cv: "CV",
     contact: "contact",
   },

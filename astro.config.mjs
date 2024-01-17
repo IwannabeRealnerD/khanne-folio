@@ -7,7 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://astrofy-template.netlify.app",
   i18n: {
-    defaultLocale: "en",
+    defaultLocale: "kr",
     locales: ["en", "kr"],
     routing: {
       prefixDefaultLocale: true,

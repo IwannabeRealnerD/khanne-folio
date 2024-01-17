@@ -3,7 +3,6 @@ import { useMenuTranslator } from "@/lib/sideMenuStr";
 const { sideBarActiveItemID } = Astro.props;
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
 
-const isKr = Astro.currentLocale === "kr";
 const useTranslator = useMenuTranslator(
   Astro.currentLocale as "kr" | "en"
 );
