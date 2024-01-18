@@ -4,12 +4,12 @@ import TimeLineElement from "@/components/cv/TimeLine.astro";
 
 const startDate = new Date("2021-07-01");
 const today = new Date();
+
 const monthsDifference =
   (today.getFullYear() - startDate.getFullYear()) * 12 +
   (today.getMonth() - startDate.getMonth());
 
 const experienceYear = Math.floor(monthsDifference / 12);
-
 const experienceMonth = Math.floor(monthsDifference % 12);
 ---
 
@@ -18,9 +18,12 @@ const experienceMonth = Math.floor(monthsDifference % 12);
     <div class="text-3xl w-full font-bold">Profile</div>
   </div>
   <div class="mb-10 text-justify">
-    <i>Hello there❓</i>, I’m Honggwan Jeong, a frontend developer
-    with a passion for creating functional websites that provide a
-    seamless user experience with maintainable code.
+    <i>Hello there❓</i>
+    <br />I’m Honggwan Jeong<span class="text-sm text-gray-500"
+      >(Khanne is short version of my Korean name lol)</span
+    >, a frontend developer with a passion for creating functional
+    websites that provide a seamless user experience with maintainable
+    code.
     <br />I believe that good developer experience (DX) leads to good
     user experience (UX), and I’m always looking for ways to improve
     both. <br />
@@ -151,47 +154,47 @@ const experienceMonth = Math.floor(monthsDifference % 12);
   </div>
 
   <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
       />
     </li>
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
       />
     </li>
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"
       />
     </li>
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white"
       />
     </li>
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/socketdotio-010101?style=for-the-badge&logo=socketdotio&logoColor=white"
       />
     </li>
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white"
       />
     </li>
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/cypress-69D3A7?style=for-the-badge&logo=cypress&logoColor=white"
       />
     </li>
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/jest-C21325?style=for-the-badge&logo=jest&logoColor=white"
       />
     </li>
-    <li>
+    <li class="mb-3">
       <img
         src="https://img.shields.io/badge/githubactions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"
       />
