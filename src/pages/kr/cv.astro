@@ -4,12 +4,12 @@ import TimeLineElement from "@/components/cv/TimeLine.astro";
 
 const startDate = new Date("2021-07-01");
 const today = new Date();
+
 const monthsDifference =
   (today.getFullYear() - startDate.getFullYear()) * 12 +
   (today.getMonth() - startDate.getMonth());
 
 const experienceYear = Math.floor(monthsDifference / 12);
-
 const experienceMonth = Math.floor(monthsDifference % 12);
 ---
 
@@ -18,46 +18,64 @@ const experienceMonth = Math.floor(monthsDifference % 12);
     <div class="text-3xl w-full font-bold">Profile</div>
   </div>
   <div class="mb-10 text-justify">
-    <i>Hello there❓</i>, I’m Honggwan Jeong, a frontend developer
-    with a passion for creating functional websites that provide a
-    seamless user experience with maintainable code.
-    <br />I believe that good developer experience (DX) leads to good
-    user experience (UX), and I’m always looking for ways to improve
-    both. <br />
-    I have {experienceYear} years {
-      experienceMonth ? `and ${experienceMonth} months` : ""
-    } of experience in front-end development, Mainly concentrated on React,
-    NextJS.<br />
-    I’m excited to work with people who share my passion for delivering
-    better UX and creating innovative web experiences.
+    <i>Hello there❓</i>
+    <br /> 효율적이고 typesafe 한 product 개발에 집중하며 이용자들에게
+    좋은 UX를 제공하기 위해 고민하는 Frontend 개발자 정홍관입니다.
+    <br />좋은 개발자 경험(DX)은 좋은 유저 경험(UX)를 만드는데 많은
+    영향을 끼친다고 생각하며 항상 두가지를 개선할 방법을 고민하고 또
+    고민하며 개발하고 있습니다.<br />
+    총 {experienceYear}년 {
+      experienceMonth ? `${experienceMonth} 개월` : ""
+    } 의 프론트엔드 개발 경력을 가지고 있으며 주로 React를 다뤄왔습니다.<br
+    />
+    사용자들에게 더 나은 경험을 제공하기 위해 끊임없이 성장하는 중이며,
+    저와 같은 열정을 가진 개발자들과 함께 일할 수 있는 기회를 고대하고
+    있습니다. 감사합니다.
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
+    <div class="text-3xl w-full font-bold">교육</div>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Korea IT Occupational Training College (Bachelor's degree)"
-      subtitle="2017 to 2020, Seoul, Korea - Department of Computer and Information Security"
+      title="한국IT직업전문학교"
+      subtitle="2017년 - 2020년, 서울 - 정보보호학과 학사"
     />
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <div class="text-3xl w-full font-bold">경력</div>
   </div>
 
   <div class="time-line-container mb-10">
     <TimeLineElement
       title="Rapid Global - Frontend Engineer(Lead)"
-      subtitle="From Apr 2022 to Apr 2023, Seoul, Korea"
+      subtitle="2023년 4월 - 2023년 12월, 서울"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-      enim ad minim veniam, quis nostrud exercitation ullamco laboris
-      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-      in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-      nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      <ul class="list-disc ml-4">
+        <li>
+          기존에 존재하던 C#, electron, React 기반으로 구현된 구매대행
+          자동화 서비스인 "래피드 업"을 100% 웹기반 서비스인
+          "헤이셀러" 출시
+        </li>
+        <li>
+          HTML canvas(fabricjs)를 이용하여 이미지 에디터 구축(이미지
+          내 글자 번역, 이미지 내 글 자 지우기)
+        </li>
+        <li>
+          웹소켓(Socket IO)을 이용한 페이지 이동 간 각 쇼핑몰의 상품
+          등록 progress 추적
+        </li>
+        <li>
+          일정 기간 특정기능 사용 후 느려짐 현상을 해결하기 위해
+          Chrome DevTools를 이용하여 디버그 및 메모리 누수 해결
+        </li>
+        <li>
+          unit, component, e2e 테스트를 CI에 적용하여 각종 테스트
+          자동화 - Github actions 활용
+        </li>
+      </ul>
     </TimeLineElement>
     <TimeLineElement
       title="DeepleHR - Frontend Engineer"
@@ -65,23 +83,23 @@ const experienceMonth = Math.floor(monthsDifference % 12);
     >
       <ul class="list-disc ml-4">
         <li>
-          Migrated existing products implemented in EJS to React,
-          NextJS, and TypeScript
+          EJS로 구현된 기존 프로덕트를 주도적으로 마이그레이션 하여,
+          React, NextJS, TypeScript 등의 기술 스택을 적용
         </li>
         <li>
-          Implemented ISR to minimize backend requests to server and
-          improve TTV, LCP
+          변화가 자주 일어나지 않는 페이지에 ISR을 사용하여 백엔드
+          요청 최소화 및 FE 퍼포먼스 최적화 수행. 이를 통해 사용자에게
+          보다 빠른 페이지 로딩 속도와 더 나은 사용자 경험 제공
         </li>
         <li>
-          Improved DX(Developer Experience) by implementing a
-          monolithic architecture to efficiently manage the code base
-          and using remote caching to minimize time spent on builds,
-          tests, and linting
+          다수의 레포지터리에 나뉘어 존재하던 프로젝트에 모노레포
+          아키텍처를 적용하여 코드 베이스 효율적으로 관리 및 원격
+          캐싱을 이용해 빌드, 테스트 그리고 린트에 걸리는 시간을
+          최소화 DX 개선
         </li>
         <li>
-          Developed and documentized common components using storybook
-          to maximize component maintainability and collaboration with
-          designers.
+          스토리북을 이용해 공통 컴포넌트 개발 및 문서화 및 배포하여
+          컴포넌트 유지보수성을 극대화했으며 디자이너와의 협업 주도
         </li>
       </ul>
     </TimeLineElement>
@@ -91,29 +109,22 @@ const experienceMonth = Math.floor(monthsDifference % 12);
     >
       <ul class="list-disc ml-4">
         <li>
-          Reverse engineering analysis of mobile, desktop, and web
-          applications to understand how applications work, and use
-          programming knowledge to identify security vulnerabilities
-          and propose countermeasures.
+          Mobile, Desktop, Web 애플리케이션 역공학 분석을 통해
+          애플리케이션의 동작 원리를 이해하고, 프로그래밍적인 지식을
+          활용하여 보안 취약점을 식별 및 대응방안 제시
         </li>
         <li>
-          Web and Mobile hacking - Find vunlerabilities and propose
-          countermeasures for SQL Injection, XSS,
-          authorization-related vulnerabilities, file download/upload
-          vulnerabilities, bypass rooting detection logic using
-          reverse engineering analysis, analyze obfuscated
-          applications, and modify security logic.
-        </li>
-        <li>
-          Black box penetration test - Black box-based penetration of
-          national infrastructure and financial institutions.
+          SQL Injection, XSS, 인가 인증관련 취약점, 파일 다운로드 /
+          업로드 취약점 진단 및 대응방안 제안, 역공학 분석을 이용해
+          루팅 탐지 로직 우회, 난독화된 애플리케이션 분석 및 보안 로직
+          변조
         </li>
       </ul>
     </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+    <div class="text-3xl w-full font-bold">자격증</div>
   </div>
 
   <ul class="list-disc mx-6 mb-10 grid gap-2">
@@ -129,24 +140,54 @@ const experienceMonth = Math.floor(monthsDifference % 12);
   </ul>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
+    <div class="text-3xl w-full font-bold">기술 스택</div>
   </div>
 
   <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+      />
+    </li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
+      />
+    </li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"
+      />
+    </li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white"
+      />
+    </li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/socketdotio-010101?style=for-the-badge&logo=socketdotio&logoColor=white"
+      />
+    </li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white"
+      />
+    </li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/cypress-69D3A7?style=for-the-badge&logo=cypress&logoColor=white"
+      />
+    </li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/jest-C21325?style=for-the-badge&logo=jest&logoColor=white"
+      />
+    </li>
+    <li class="mb-3">
+      <img
+        src="https://img.shields.io/badge/githubactions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"
+      />
+    </li>
   </ul>
 </BaseLayout>
